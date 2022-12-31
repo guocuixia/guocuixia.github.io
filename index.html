@@ -152,20 +152,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-“码云”" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-码云仓库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/31/%E2%80%9C%E7%A0%81%E4%BA%91%E2%80%9D/">码云</a>
+      <a class="article-title" href="/2022/12/31/%E7%A0%81%E4%BA%91%E4%BB%93%E5%BA%93/">码云仓库</a>
     </h1>
   
 
         
-        <a href="/2022/12/31/%E2%80%9C%E7%A0%81%E4%BA%91%E2%80%9D/" class="archive-article-date">
-  	<time datetime="2022-12-31T12:46:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-31</time>
+        <a href="/2022/12/31/%E7%A0%81%E4%BA%91%E4%BB%93%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2022-12-31T12:54:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-31</time>
 </a>
         
       </header>
@@ -177,7 +177,7 @@
 <h2 id="生成-x2F-添加SSH公钥"><a href="#生成-x2F-添加SSH公钥" class="headerlink" title="生成&#x2F;添加SSH公钥"></a>生成&#x2F;添加SSH公钥</h2><p><a target="_blank" rel="noopener" href="https://gitee.com/help/labels/19">SSH Key</a> <a target="_blank" rel="noopener" href="https://gitee.com/help/labels/29">SSH 公钥</a></p>
 <p>Gitee 提供了基于SSH协议的Git服务，在使用SSH协议访问仓库之前，需要先配置好账户&#x2F;仓库的SSH公钥。</p>
 <p>你可以按如下命令来生成 sshkey:</p>
-<p>ssh-keygen -t ed25519 -C “<a href="mailto:&#x78;&#120;&#x78;&#x78;&#x78;&#x40;&#120;&#x78;&#x78;&#120;&#x78;&#x2e;&#99;&#x6f;&#109;">&#x78;&#120;&#x78;&#x78;&#x78;&#x40;&#120;&#x78;&#x78;&#120;&#x78;&#x2e;&#99;&#x6f;&#109;</a>“  </p>
+<p>ssh-keygen -t ed25519 -C “<a href="mailto:&#x78;&#120;&#120;&#120;&#120;&#x40;&#120;&#120;&#x78;&#120;&#x78;&#x2e;&#99;&#x6f;&#109;">&#x78;&#120;&#120;&#120;&#120;&#x40;&#120;&#120;&#x78;&#120;&#x78;&#x2e;&#99;&#x6f;&#109;</a>“  </p>
 <h1 id="Generating-public-x2F-private-ed25519-key-pair…"><a href="#Generating-public-x2F-private-ed25519-key-pair…" class="headerlink" title="Generating public&#x2F;private ed25519 key pair…"></a>Generating public&#x2F;private ed25519 key pair…</h1><blockquote>
 <p>注意：这里的 <code>xxxxx@xxxxx.com</code> 只是生成的 sshkey 的名称，并不约束或要求具体命名为某个邮箱。<br>现网的大部分教程均讲解的使用邮箱生成，其一开始的初衷仅仅是为了便于辨识所以使用了邮箱。</p>
 </blockquote>
@@ -188,91 +188,7 @@
 <p>复制生成后的 ssh key，通过仓库主页 <strong>「管理」-&gt;「部署公钥管理」-&gt;「添加部署公钥」</strong> ，添加生成的 public key 添加到仓库中。</p>
 <p><img src="https://images.gitee.com/uploads/images/2018/0814/233212_29a62378_551147.png" alt="添加部署公钥" title="添加部署公钥"></p>
 <p>添加后，在终端（Terminal）中输入</p>
-<p>ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#x65;&#x65;&#x2e;&#x63;&#111;&#109;">&#x67;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#x65;&#x65;&#x2e;&#x63;&#111;&#109;</a></p>
-<p>首次使用需要确认并添加主机到本机SSH可信列表。若返回 <code>Hi XXX! You&#39;ve successfully authenticated, but Gitee.com does not provide shell access.</code> 内容，则证明添加成功。</p>
-<p><img src="https://images.gitee.com/uploads/images/2018/0814/170837_4c5ef029_551147.png" alt="SSH添加提示" title="SSH添加提示"></p>
-<p>添加成功后，就可以使用SSH协议对仓库进行操作了。</p>
-<h2 id="仓库公钥和可部署公钥"><a href="#仓库公钥和可部署公钥" class="headerlink" title="仓库公钥和可部署公钥"></a><a target="_blank" rel="noopener" href="https://gitee.com/help/articles/4181#%E4%BB%93%E5%BA%93%E5%85%AC%E9%92%A5%E5%92%8C%E5%8F%AF%E9%83%A8%E7%BD%B2%E5%85%AC%E9%92%A5"></a>仓库公钥和可部署公钥</h2><p>为了便于用户在多个项目仓库下使用一套公钥，免于重复部署和管理的繁琐，Gitee 推出了「可部署公钥」功能，支持在一个仓库空间下使用当前账户名下&#x2F;参与的另一个仓库空间的部署公钥，实现公钥共用。</p>
-<p>原文教程：<br><a target="_blank" rel="noopener" href="https://gitee.com/help/articles/4181#article-header0">https://gitee.com/help/articles/4181#article-header0</a><br>2022-11-09</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/12/31/%E2%80%9C%E7%A0%81%E4%BA%91%E2%80%9D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-码云" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/31/%E7%A0%81%E4%BA%91/">码云</a>
-    </h1>
-  
-
-        
-        <a href="/2022/12/31/%E7%A0%81%E4%BA%91/" class="archive-article-date">
-  	<time datetime="2022-12-31T12:46:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://gitee.com/Gxia/gxia.git">https://gitee.com/Gxia/gxia.git</a> ssh<br><a target="_blank" rel="noopener" href="https://gitee.com/Gxia/gxia.git">https://gitee.com/Gxia/gxia.git</a> http<br>用户名：Gxia<br>邮箱33103</p>
-<p>安装Git 生成密钥   同步 可用github desktop同时使用</p>
-<h2 id="生成-x2F-添加SSH公钥"><a href="#生成-x2F-添加SSH公钥" class="headerlink" title="生成&#x2F;添加SSH公钥"></a>生成&#x2F;添加SSH公钥</h2><p><a target="_blank" rel="noopener" href="https://gitee.com/help/labels/19">SSH Key</a> <a target="_blank" rel="noopener" href="https://gitee.com/help/labels/29">SSH 公钥</a></p>
-<p>Gitee 提供了基于SSH协议的Git服务，在使用SSH协议访问仓库之前，需要先配置好账户&#x2F;仓库的SSH公钥。</p>
-<p>你可以按如下命令来生成 sshkey:</p>
-<p>ssh-keygen -t ed25519 -C “<a href="mailto:&#x78;&#120;&#x78;&#120;&#x78;&#64;&#120;&#120;&#x78;&#120;&#120;&#x2e;&#99;&#111;&#x6d;">&#x78;&#120;&#x78;&#120;&#x78;&#64;&#120;&#120;&#x78;&#120;&#120;&#x2e;&#99;&#111;&#x6d;</a>“  </p>
-<h1 id="Generating-public-x2F-private-ed25519-key-pair…"><a href="#Generating-public-x2F-private-ed25519-key-pair…" class="headerlink" title="Generating public&#x2F;private ed25519 key pair…"></a>Generating public&#x2F;private ed25519 key pair…</h1><blockquote>
-<p>注意：这里的 <code>xxxxx@xxxxx.com</code> 只是生成的 sshkey 的名称，并不约束或要求具体命名为某个邮箱。<br>现网的大部分教程均讲解的使用邮箱生成，其一开始的初衷仅仅是为了便于辨识所以使用了邮箱。</p>
-</blockquote>
-<p>按照提示完成三次回车，即可生成 ssh key。通过查看 <code>~/.ssh/id_ed25519.pub</code> 文件内容，获取到你的 public key</p>
-<p>cat ~&#x2F;.ssh&#x2F;id_ed25519.pub</p>
-<h1 id="ssh-ed25519-AAAAB3NzaC1yc2EAAAADAQABAAABAQC6eNtGpNGwstc…"><a href="#ssh-ed25519-AAAAB3NzaC1yc2EAAAADAQABAAABAQC6eNtGpNGwstc…" class="headerlink" title="ssh-ed25519 AAAAB3NzaC1yc2EAAAADAQABAAABAQC6eNtGpNGwstc…."></a>ssh-ed25519 AAAAB3NzaC1yc2EAAAADAQABAAABAQC6eNtGpNGwstc….</h1><p><img src="https://images.gitee.com/uploads/images/2021/0827/165113_8e58f0e1_551147.png" alt="SSH生成" title="SSH生成"></p>
-<p><img src="https://images.gitee.com/uploads/images/2021/0827/165455_ec7dbd09_551147.png" alt="输入图片说明" title="屏幕截图.png"></p>
-<p>复制生成后的 ssh key，通过仓库主页 <strong>「管理」-&gt;「部署公钥管理」-&gt;「添加部署公钥」</strong> ，添加生成的 public key 添加到仓库中。</p>
-<p><img src="https://images.gitee.com/uploads/images/2018/0814/233212_29a62378_551147.png" alt="添加部署公钥" title="添加部署公钥"></p>
-<p>添加后，在终端（Terminal）中输入</p>
-<p>ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x65;&#101;&#46;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x65;&#101;&#46;&#99;&#x6f;&#x6d;</a></p>
+<p>ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#x69;&#116;&#x65;&#101;&#46;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#x69;&#116;&#x65;&#101;&#46;&#99;&#x6f;&#x6d;</a></p>
 <p>首次使用需要确认并添加主机到本机SSH可信列表。若返回 <code>Hi XXX! You&#39;ve successfully authenticated, but Gitee.com does not provide shell access.</code> 内容，则证明添加成功。</p>
 <p><img src="https://images.gitee.com/uploads/images/2018/0814/170837_4c5ef029_551147.png" alt="SSH添加提示" title="SSH添加提示"></p>
 <p>添加成功后，就可以使用SSH协议对仓库进行操作了。</p>
@@ -286,22 +202,11 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">仓库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/12/31/%E7%A0%81%E4%BA%91/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/12/31/%E7%A0%81%E4%BA%91%E4%BB%93%E5%BA%93/">展开全文 >></a>
         </p>
       
 
@@ -1186,6 +1091,80 @@
 
 
   
+    <article id="post-kali安装字体" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/12/31/kali%E5%AE%89%E8%A3%85%E5%AD%97%E4%BD%93/">kali安装字体</a>
+    </h1>
+  
+
+        
+        <a href="/2022/12/31/kali%E5%AE%89%E8%A3%85%E5%AD%97%E4%BD%93/" class="archive-article-date">
+  	<time datetime="2022-12-31T10:51:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="微软字体"><a href="#微软字体" class="headerlink" title="微软字体"></a>微软字体</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install tf-mscorefonts-installer</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="文泉译微米黑体"><a href="#文泉译微米黑体" class="headerlink" title="文泉译微米黑体"></a>文泉译微米黑体</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install fonts-wqy-microhei</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install mtr whois gcc git curl -y</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="安全工具："><a href="#安全工具：" class="headerlink" title="安全工具："></a>安全工具：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install kali-linux-all</span><br></pre></td></tr></table></figure>
+
+<h3 id="翻译软件"><a href="#翻译软件" class="headerlink" title="翻译软件"></a>翻译软件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.apt install goldendict</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>youdao <a target="_blank" rel="noopener" href="http://dict.youdao.com/search?q=%25GDWORD%25&ue=utf8">http://dict.youdao.com/search?q=%GDWORD%&amp;ue=utf8</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/12/31/kali%E5%AE%89%E8%A3%85%E5%AD%97%E4%BD%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1284,10 +1263,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rss</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">仓库</a>
               </li>
             
             <div class="clearfix"></div>
