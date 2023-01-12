@@ -174,6 +174,156 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-如何在windows10上安装安卓子系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/01/13/%E5%A6%82%E4%BD%95%E5%9C%A8windows10%E4%B8%8A%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93%E5%AD%90%E7%B3%BB%E7%BB%9F/">如何在windows10上安装WSA安卓子系统 两种方法</a>
+    </h1>
+  
+
+        
+        <a href="/2023/01/13/%E5%A6%82%E4%BD%95%E5%9C%A8windows10%E4%B8%8A%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93%E5%AD%90%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
+  	<time datetime="2023-01-12T16:58:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://cdn.sspai.com/article/7ad6bfb7-2d46-722e-7366-b2816ff28bc2.png?imageMogr2/auto-orient/quality/95/thumbnail/!1420x708r/gravity/Center/crop/1420x708/interlace/1"></p>
+<p>pc软件| 两种方法让 Windows 10 也能运行 Android 应用<br>文章来源：少数派| 一日一技<br><a target="_blank" rel="noopener" href="https://sspai.com/u/liuxiaofengone/updates"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="化学心情下2"></a><br>2021 年微软正式推出了 Windows 11 桌面操作系统，相比于旧版本，Windows 11 除了在系统界面上有着相当大的变化之外，更多的变化在于其加入了对 Android 子系统的支持，从而将移动端最大的生态系统融入其中。但微软对可以升级到 Windows 11 的设备硬件做出限制，这导致市面上绝大多数的可以支持 Windows 10 的设备无法升级到 Windows 11，也就无法体验到 Windows 11 带来的诸多新功能特性。</p>
+<p>但经过一年时间的迭代，即便属于支持末期的 Windows 10，在这几次年度功能更新后也获得了 Windows 11 才有的新特性，比如通过 WSLg 已经可以让 Windows 10 可以运行图形化的 Linux 应用，作为 Windows 11 独占的 WSA 在 Windows 10 上运行自然也变得不再遥远。</p>
+<p>相比直接使用虚拟机或者模拟器在 Windows 10 上运行 Android 应用，通过 WSA 运行 Android 应用显得效率更高：依赖 Windows 自身的虚拟化引擎，无需先启动虚拟机从而资源占用更低，对于 Android 应用的系统架构无要求，最重要的是可以完全窗口化运行从而可以和当前的 Windows 生态充分融合。而目前就有两种方法让 Windows 10 运行 WSA，适用于不同的系统场景，如果你有在 Windows 10 上运行 Android 应用需求不妨「按需索取」。</p>
+<h2 id="将-Windows-11-的-WSA-移植到-Windows-10：WSAPatch"><a href="#将-Windows-11-的-WSA-移植到-Windows-10：WSAPatch" class="headerlink" title="将 Windows 11 的 WSA 移植到 Windows 10：WSAPatch"></a>将 Windows 11 的 WSA 移植到 Windows 10：WSAPatch</h2><ul>
+<li>优点：基于 WSA 原生打造，兼容性最好。</li>
+<li>缺点：仅支持 Windows 10 22H2 最新版，对系统版本有要求</li>
+</ul>
+<p><a href="https://sspai.com/link?target=https://github.com/cinit/WSAPatch">WSAPatch</a> 顾名思义就是让 Windows 10 也能运行 WSA 的补丁，通过一系列该项目中提供了两个补丁文件，我们可以让 Windows 10 也可以安装上 WSA。</p>
+<p>首先我们需要将 Windows 10 更新至最新版本（Windows 10 22H2），对应的版本至少 Windows 10 10.0.19045.2311，如果不确定可以在终端或者 PowerShell 中输入<code>winver</code> 来查看 Windows 版本。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdl8tb34tdunrsig4g?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcnfpkgLN3GP9EKBNSAbIC0cc"></p>
+<p>同时，Windows 10 版本至少为专业版，原因是后面我们需要安装 Hyper-V 虚拟化平台，而这也是 WSL 以及 WSA 的基础。如果你 Windows 10 使用的是家庭版，那么可能就无法使用这个办法来体验 WSA 了。</p>
+<p>以上的准备工作就绪之后，首先依旧是在 BIOS 中开启虚拟化支持，并打开Windows 10 中的相关功能：</p>
+<p>打开「控制面板」-「程序和功能」-「启用或关闭 Windows 功能」，在其中找到并开启 Hyper-V 、「虚拟机平台」、「Windows 虚拟机监控程序平台」以及「适用于Linux 的 Windows 子系统」。勾选安装后重启设备，最基础的工作已经准备完毕了。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdl95b34tduvja0iv0?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcnAN78kzu1LSFU9qBBSrTpvf"></p>
+<p>紧接着，我们需要在 Windows 10 中开启相关开发者权限，在「设置」-「更新和安全」中，找到「开发者选项」，打开「开发人员模式」，同时在 Powershell 项目中勾选「更改执行策略，以允许本地 PowerShell 脚本在未签名的情况下运行。远程脚本需要签名」并点击「应用」。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdl95b34tduhil7jog?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcnBRrIoguUN6PgWuEXy2Mreh"></p>
+<p>之后我们需要下载 WSA，为了方便后面的使用，我们可以自己定制 WSA，比如通过 MagiskOnWSA 项目将 Google 服务以及 Magisk 植入到 WSA。而生成对应的安装包则可以有下面两种方式：第一种方式即不依赖 GitHub Actions 服务的 <a href="https://sspai.com/link?target=https://github.com/LSPosed/MagiskOnWSALocal">MagiskOnWSALocal</a>，这需要在本地安装 WSL 并安装 Ubuntu 来运行，具体可以参见：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://sspai.com/post/75351">一日一技 | WSA 定制安装，找回你需要的 Google 服务和 Magisk</a></li>
+</ul>
+<h2 id="另一个办法是相对比较懒人的做法（推荐）"><a href="#另一个办法是相对比较懒人的做法（推荐）" class="headerlink" title="另一个办法是相对比较懒人的做法（推荐）"></a>另一个办法是相对比较懒人的做法（推荐）</h2><p>依旧是通过依赖 GitHub Actions 服务的 <a href="https://sspai.com/link?target=https://github.com/AdityaAgarwal539/MagiskOnWSA-1">Magisk on WSA 的 fork 项目</a>，将其 fork 到自己 Github 账户下，在 fork 项目中点击 Action 后，点击 Build WSA – Run workflow，在配置菜单中选择想要的版本，这里 Build arch 选择<code>X64</code>，WSA release Type 选择<code>insider slow</code>，Magisk version 这里选择 <code>stable</code>。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdl9lb34tdunrsig50?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcnZONYnmea7fdMutiwLB4Dsz"></p>
+<p>如果需要集成 Google 服务，那么下面在 Variants of Gapps 选择<code>pico</code>，如果需要 root，那么 Root solution 中选择 <code>magisk</code>，其他默认 -点击<code>Run workflow</code>，这里需要等待一会然后在 <code>Artifacts</code> 中下载生成的 WSA 包即可。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdl9tb34tdt9qfne00?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcn6oOTeN44KDMjaC9IitBXdb"></p>
+<p>接下来我们解压缩生成的 WSA 包。紧接着下载需要的两个 dll 文件，这里我们可以直接从 WSAPatch 项目中的 <a href="https://sspai.com/link?target=https://github.com/cinit/WSAPatch/releases">Releases</a> 中下载，将下载的压缩包解压后，拷贝到刚刚解压的 WSA 目录下的 WsaClient 文件夹中。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdla5b34tdt9qfne0g?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcn6RHUW6tZcrMhzeqadx80ze"></p>
+<p>然后，我们需要使用代码编辑器修改 WSA 目录下的 <code>AppxManifest.xml</code> 文件。首先使用编辑器搜索 <code>AppxManifest.xml</code> 中的<code>TargetDeviceFamily</code> 这个关键字，然后定位到下面这段代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;TargetDeviceFamily Name=&quot;Windows.Desktop&quot; MinVersion=&quot;10.0.22000.120&quot; MaxVersionTested=&quot;10.0.22000.120&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>将其中的 <code>MinVersion</code>中的 <code>10.0.22000.120</code>修改为对应的电脑系统版本如<code>10.0.19045.2311</code>。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdladb34tdunrsig5g?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcnQvx8kDRQ9OKEq2qsntFWtg"></p>
+<p>然后再搜索<code>customInstall</code> ，注释掉下面两段内容：<br>（如何注释可百度）如在Sublime Text4中，选中要注释的行或整段按ctrl+&#x2F;键即可）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;rescap:Capability Name=&quot;customInstallActions&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>以及：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;desktop6:Extension Category=&quot;windows.customInstall&quot;&gt;</span><br><span class="line">    &lt;desktop6:CustomInstall Folder=&quot;CustomInstall&quot; desktop8:RunAsUser=&quot;true&quot;&gt;</span><br><span class="line">        &lt;desktop6:RepairActions&gt;</span><br><span class="line">            &lt;desktop6:RepairAction File=&quot;WsaSetup.exe&quot; Name=&quot;Repair&quot; Arguments=&quot;repair&quot;/&gt;</span><br><span class="line">        &lt;/desktop6:RepairActions&gt;</span><br><span class="line">        &lt;desktop6:UninstallActions&gt;</span><br><span class="line">            &lt;desktop6:UninstallAction File=&quot;WsaSetup.exe&quot; Name=&quot;Uninstall&quot; Arguments=&quot;uninstall&quot;/&gt;</span><br><span class="line">        &lt;/desktop6:UninstallActions&gt;</span><br><span class="line">    &lt;/desktop6:CustomInstall&gt;</span><br><span class="line">&lt;/desktop6:Extension&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.sspai.com/editor/u_/cepdladb34tdt9qfne10?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcn7PJ9tJ3z6xgyKKv9jdtvHf"></p>
+<p>完成之后保存，接下来我们使用管理员权限打开 Powershell，定位到 WSA 目录后，执行脚本<code>.\Install.ps1</code> 来安装 WSA。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdlalb34tdt9qfne1g?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcnXIu0nOVQvZJbh1Vzt1QiVb"></p>
+<p>如果一切操作顺利，则可以看到 WSA 以及 Magisk 都已经陆续启动，你可以像在 Windows 11 上使用 WSA 那样通过 ADB 命令来安装应用，或者通过商店来安装。并且可以通过多窗口的形式来多个 Android 应用，相比运行虚拟机或者模拟器要更为方便，最重要的是，他同样支持支持显卡加速，在运行一些对图形化有要求的应用也更为稳定。不过如果你的设备较旧，那么可能依旧会存在部分应用显示不全等问题。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdlatb34tdt9qfne20?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcnMw9Eb6NkCqwXOXkg3HRNQc"><br>安装完成</p>
+<h2 id="傻瓜化的一键安装-WSA：兆懿移动应用运行平台"><a href="#傻瓜化的一键安装-WSA：兆懿移动应用运行平台" class="headerlink" title="傻瓜化的一键安装 WSA：兆懿移动应用运行平台"></a>傻瓜化的一键安装 WSA：兆懿移动应用运行平台</h2><p>将 Windows 11 的 WSA 移植到 Windows 10 的做法对于不少一般用户来说还是过于复杂，一方面需要生成 MagiskOnWSA，同时还需要修改相关的配置参数。那么有没有更为简单办法来实现类似的功能呢？</p>
+<p>兆懿移动应用运行平台就是这样一款「类 WSA」的实现方案，相比在 WSA 上直接打补丁来实现 Windows 10 上运行 Android 应用，兆懿移动应用运行平台对于系统要求更低（并不需要最新版本的 Windows 10），同时对于不具备 WSL2 支持的系统也可以得到很好的兼容，因此更适合运行较老硬件的 Windows 10 硬件。</p>
+<ul>
+<li>优点：对于系统版本，硬件要求低</li>
+<li>缺点：Android 运行时版本过低（Android 7 和 Android 9），应用启动较慢。</li>
+</ul>
+<p>和通过 WSAPatch 安装类似，使用兆懿移动应用运行平台来运行 Android 应用之前，我们同样需要在「控制面板」-「程序和功能」，找到「启用或关闭 Windows 功能」，在其中找到并开启 Hyper -V 来启动虚拟化平台。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdlb5b34tduhil7jpg?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcnqDryXmGAK9uhhKfv7U8WdU"></p>
+<p>重启后在兆懿移动应用运行平台下载最新的 <a href="https://sspai.com/link?target=https://www.wndroid.com/downLoad">兆懿 2.0 Beta 1</a> 安装包，然后根据步骤双击安装包进行安装，在安装过程中安装程序会完成环境配置等一系列操作，我们只需要等待完成即可。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdlbdb34tdunrsig60?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcne4aTbN70PSFSu27fx6fGrd"></p>
+<p>安装完成之后我们可以双击打开桌面上的「兆懿应用商城」，点击左上方的设置页面进行环境设置，在功能上类似于 WSA 的设置页面，我们可以设置 Android 是否常驻后台，性能上是否采用增强模式，分配给 Android 的处理器核心数以及内存数，安装的 Android 应用是否生成桌面快捷方式等等。</p>
+<p>同样在这里还可以设置机型以及对应的快捷键等等，还可以在高级设置中调整 DPI 以及是否启用 ADB 日志打印等等。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdlblb34tduhil7jq0?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcnTbflj5UDckvmFS7Nt3KTp6"></p>
+<p>设置完成后，我们就可以通过兆懿应用商城来安装 Android 应用，下载和安装应用时会同步加载应用运行库来运行，默认兆懿采用的 Android 7.0 的运行库，对于较新的应用则可以在「我的应用」中，在右上角切换到 Android 9.0 的运行库来运行。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdlc5b34tdt9qfne2g?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcnKJ9zhxPb8ZDjDZIuvaXVwf"></p>
+<p>兆懿应用平台上支持窗口化运行多个 Android 应用。只不过其窗口 UI 并非系统原生而是经过了重新设计。同时也支持直接使用 Windows 上输入法在 Android 进行文本输入。只不过或许是显卡硬件加速支持还不够完善问题，在兆懿上运行 Android 应用会明显比 WSA 要卡顿不少，很多应用也只是勉强能够运行，但帧数确实十分「感人」。</p>
+<p><img src="https://cdn.sspai.com/editor/u_/cepdlcdb34tduvja0ivg?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="boxcnguf6uEeo3EwN8lWhkPY0tf"></p>
+<p>除了在商店中下载应用运行之外，兆懿也支持本地安装已经下载好的 APK 软件包运行，这一点上要比 WSA 要灵活不少（WSA 需要借助 ADB 或者辅助工具实现）。并且由于平台的限制，也无法通过类似 MagiskOnWSA 的方案，在兆懿上实现安装 Google 服务框架以及安装 Magisk 模块，所以你只是想要省心地在 Windows 10 运行 Android 应用，兆懿的这个「类WSA」方案倒是值得一试。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>在经过近一年的尝试之后，现在我们终于可以实现在 Windows 10 上通过 WSA 来运行 Android 应用，如果你恰好有这方面的需求，不妨试试以上的两种方法来在 Windows 上运行 Android 应用。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安卓</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">win10</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/电脑软件//" class="article-tag-list-link color5">电脑软件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/01/13/%E5%A6%82%E4%BD%95%E5%9C%A8windows10%E4%B8%8A%E5%AE%89%E8%A3%85%E5%AE%89%E5%8D%93%E5%AD%90%E7%B3%BB%E7%BB%9F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-全新的测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1170,72 +1320,9 @@
 
 
   
-    <article id="post-wifi防破解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/31/wifi%E9%98%B2%E7%A0%B4%E8%A7%A3/">wifi防破解</a>
-    </h1>
-  
-
-        
-        <a href="/2022/12/31/wifi%E9%98%B2%E7%A0%B4%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2022-12-31T10:51:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> 设置为mac地址绑定，设置上网设备白名单，设置路由器为隐藏模式，把密码设置为字母数字加标点符号，更改路由器登陆账号和密码，更改路由器登陆地址。以上步骤几乎可以防止被破解</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/12/31/wifi%E9%98%B2%E7%A0%B4%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1339,6 +1426,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">win10</a>
               </li>
             
             <div class="clearfix"></div>
