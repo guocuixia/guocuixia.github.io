@@ -174,85 +174,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-【chrom迁移】Windows下迁移chrome谷歌浏览器个人资料路径，解决C盘容量爆满问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/31/%E3%80%90chrom%E8%BF%81%E7%A7%BB%E3%80%91Windows%E4%B8%8B%E8%BF%81%E7%A7%BBchrome%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AA%E4%BA%BA%E8%B5%84%E6%96%99%E8%B7%AF%E5%BE%84%EF%BC%8C%E8%A7%A3%E5%86%B3C%E7%9B%98%E5%AE%B9%E9%87%8F%E7%88%86%E6%BB%A1%E9%97%AE%E9%A2%98/">【chrom迁移】eWindows下迁移chrome谷歌浏览器个人资料路径，解决C盘容量爆满问题</a>
-    </h1>
-  
-
-        
-        <a href="/2022/12/31/%E3%80%90chrom%E8%BF%81%E7%A7%BB%E3%80%91Windows%E4%B8%8B%E8%BF%81%E7%A7%BBchrome%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AA%E4%BA%BA%E8%B5%84%E6%96%99%E8%B7%AF%E5%BE%84%EF%BC%8C%E8%A7%A3%E5%86%B3C%E7%9B%98%E5%AE%B9%E9%87%8F%E7%88%86%E6%BB%A1%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-12-31T10:50:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>移动到别的盘<br>开始前备份好User Data</p>
-<p>在浏览器输入 chrome:&#x2F;&#x2F;version&#x2F; 查看可执行文件路径和个人资料路径。记住这两个路径。</p>
-<p>第一步：剪切个人资料文件夹</p>
-<p>将 C:\Users\用户名\AppData\Local\Google\Chrome\User Data 文件夹剪切到其他盘中，我这边剪切到D:\Program Files\Google\Chrome目录下</p>
-<p>第二步：建立软连接<br>以管理员权限打开命令行，然后执行命令 mklink &#x2F;j “原先C盘User Data绝对路径” “目标盘User Data绝对路径”，注意这边空格，我这边为：<br>mklink &#x2F;J “C:\Users\KIM\AppData\Local\Google\Chrome\User Data” “D:\Program Files\Google\Chrome\User Data”</p>
-<p>这样你就能在 C:\Users\用户名\AppData\Local\Google\Chrome 目录下看到生成一个带小箭头的 User Data 图标了。<br>上述在 C 盘生成的就是一个软链接，类似 Windows 下的桌面快捷方式，就是欺骗欺骗浏览器的作用，不占用空间，而真正的个人资料就在刚刚移动的 D 盘中了。</p>
-<h2 id="以上操作后重新地址栏输入chrome-x2F-x2F-Version"><a href="#以上操作后重新地址栏输入chrome-x2F-x2F-Version" class="headerlink" title="以上操作后重新地址栏输入chrome:&#x2F;&#x2F;Version"></a>以上操作后重新地址栏输入chrome:&#x2F;&#x2F;Version</h2><p>第三步修改浏览器缓存文件位置<br>、接下来我们选中个人资料路径后面所有的信息，右键点击信息后选择“复制”菜单项。</p>
-<p>3、接下来我们把刚刚复制的个人路径粘贴到文件资源管理器地址栏，定位到chrome浏览器的安装文件夹。</p>
-<p>4、在文件夹中找到Cache及Code Cache文件夹，右键点击该文件夹，然后在弹出菜单中选择“删除”菜单项</p>
-<p>5、然后我们再切换到非系统盘建立一个Cache的文件夹。位置自己选</p>
-<p>6.打开CMD在打开的Windows10的命令提示符窗口中输入Mklink &#x2F;d “C:\Users\用户名\AppData\Local\Google\Chrome\User Data\Default\Cache” “D:\chrome\cache”，然后按下回车键  且出现 创建的符号链接 提示成功文字信息 这样以后我们Chrome浏览器的缓存就保存到刚刚新建的文件夹中了</p>
-<p>Mklink &#x2F;d “C:\Users\KIM\AppData\Local\Google\Chrome\User Data\Default\Cache” “D:\Program Files\Google\Chrome\Cache”</p>
-<p>8.在桌面上找到的chrome快捷方式，点击选择属性菜单</p>
-<p>如图，修改红框容，”D:\ProgramFiles\Google\Chrome\Application\chrome.exe” （–user-data-dir&#x3D;”D:\Program Files\Google\Chrome\UserData”） –disk-cache-dir&#x3D;”D:\Temp\chrome”。路径请根据你的需要修改，其中：第一部分不用修改它是你的chrome启动exe文件路径，直接在后面添加，–user-data-dir 是设置用户数据目录命令，–disk-cache-dir 是设置浏览器缓存目录命令）</p>
-<p>正确”D:\Program Files\Google\Chrome\Application\chrome.exe” –user-data-dir&#x3D;”D:\Program Files\google\Chrome\User Data” –disk-cache-dir&#x3D;D:\Program Files\Google\Chrome”</p>
-<p>文章<br>：<a target="_blank" rel="noopener" href="http://t.zoukankan.com/jxldjsn-p-15675058.html">Chrome浏览器自定义设置个人信息存储路径 - 走看看 (zoukankan.com)</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.360doc.com/content/20/0522/16/261866_913912394.shtml">如何查看并更改Chrome浏览器缓存文件位置 (360doc.com)</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/12/31/%E3%80%90chrom%E8%BF%81%E7%A7%BB%E3%80%91Windows%E4%B8%8B%E8%BF%81%E7%A7%BBchrome%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AA%E4%BA%BA%E8%B5%84%E6%96%99%E8%B7%AF%E5%BE%84%EF%BC%8C%E8%A7%A3%E5%86%B3C%E7%9B%98%E5%AE%B9%E9%87%8F%E7%88%86%E6%BB%A1%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-【Chrome设置】自带的夜间模式，强制网页使用深色背景" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -292,69 +213,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/12/31/%E3%80%90Chrome%E8%AE%BE%E7%BD%AE%E3%80%91%E8%87%AA%E5%B8%A6%E7%9A%84%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F%EF%BC%8C%E5%BC%BA%E5%88%B6%E7%BD%91%E9%A1%B5%E4%BD%BF%E7%94%A8%E6%B7%B1%E8%89%B2%E8%83%8C%E6%99%AF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2022年12月31日我的个人博客成立喇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/31/2022%E5%B9%B412%E6%9C%8831%E6%97%A5%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%90%E7%AB%8B%E5%96%87/">2022年12月31日我的个人博客成立喇</a>
-    </h1>
-  
-
-        
-        <a href="/2022/12/31/2022%E5%B9%B412%E6%9C%8831%E6%97%A5%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%90%E7%AB%8B%E5%96%87/" class="archive-article-date">
-  	<time datetime="2022-12-31T10:50:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>热烈祝贺 小白捣鼓了一天</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/12/31/2022%E5%B9%B412%E6%9C%8831%E6%97%A5%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%90%E7%AB%8B%E5%96%87/">展开全文 >></a>
         </p>
       
 
@@ -557,14 +415,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rss</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
