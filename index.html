@@ -174,6 +174,217 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-加速访问github方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>加速访问github方法<br>查询TTL值越大的ip<br>添加到hosts里<br>查询TTL值越大的ip<br>访问 <a target="_blank" rel="noopener" href="http://tool.chinaz.com/dns/">http://tool.chinaz.com/dns/</a></p>
+<p>查询以下域名映射,并分别取访问速度较快的一个ip</p>
+<p>github.global.ssl.fastly.net -&gt; 66.249.89.104<br>assets-cdn.github.com -&gt; 203.208.39.99</p>
+<p>TTL值越大证明响应速度越快（“TTL”的值越大越好才对，因为“TTL”的值越大，说明发送数据包经过路由器越少，而经过路由器越少，说明越快到达目的地，速度当然也就越快。）</p>
+<p>添加到hosts里<br>将查询到的ip和域名设置到host中<br>【windows】<br>C:\Windows\System32\drivers\etc</p>
+<p>【linux】<br>vim &#x2F;etc&#x2F;hosts<br>在hosts中加入查询结果</p>
+<p>66.249.89.104 github.global.ssl.fastly.net<br>203.208.39.99 assets-cdn.github.com<br>————————————————</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/gusijin/article/details/108544285">https://blog.csdn.net/gusijin/article/details/108544285</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/01/13/%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AEgithub%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="tags-AList-Termux-115小幸运，搭配使用，把N个网盘挂载在手机本地或者安装在电脑端" class="article article-type-tags  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/01/13/AList-Termux-115%E5%B0%8F%E5%B9%B8%E8%BF%90%EF%BC%8C%E6%90%AD%E9%85%8D%E4%BD%BF%E7%94%A8%EF%BC%8C%E6%8A%8AN%E4%B8%AA%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E5%9C%A8%E6%89%8B%E6%9C%BA%E6%9C%AC%E5%9C%B0%E6%88%96%E8%80%85%E5%AE%89%E8%A3%85%E5%9C%A8%E7%94%B5%E8%84%91%E7%AB%AF/">AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地或者安装在电脑端</a>
+    </h1>
+  
+
+        
+        <a href="/2023/01/13/AList-Termux-115%E5%B0%8F%E5%B9%B8%E8%BF%90%EF%BC%8C%E6%90%AD%E9%85%8D%E4%BD%BF%E7%94%A8%EF%BC%8C%E6%8A%8AN%E4%B8%AA%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E5%9C%A8%E6%89%8B%E6%9C%BA%E6%9C%AC%E5%9C%B0%E6%88%96%E8%80%85%E5%AE%89%E8%A3%85%E5%9C%A8%E7%94%B5%E8%84%91%E7%AB%AF/" class="archive-article-date">
+  	<time datetime="2023-01-13T08:53:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>把网盘挂载到本地这个事，咱可是从去年一直追到了今年，一开始网盘挂载只是流传在「私有云」这个小圈子里。</p>
+<p>直到去年，源自电报群的 CloudDrive 凭借一手 0 门槛，无需借助 Docker 就能轻松部署 Windows 的操作，把网盘挂载本地带到了更多人的面前。</p>
+<p>至于挂载后的网盘能干什么？简单说，只要网速过得去，使用网盘资源，比如访问、删除、修改、重命名、复制粘贴等等操作，能像使用本地文件一样方便。</p>
+<p>当然，用得更多还是类似下面这张图，可以调用第三方播放器来看自己影视资源。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1.gif" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>有了 CloudDrive 帮我们打开思路，越来越多支持网盘挂载本地的工具被大家发掘，其中的翘楚，自然是在 GitHub 上开源的 AList。</p>
+<p>这个项目火到什么程度？年初的时候还只是不到 2K 的 Stars，不到一年的时间，就已经增长到了 11.6K 的 Stars，作为一个小众领域的项目，完全可以说一句恐怖如斯。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-4.png" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>当然，AList 的爆火是有原因的，对于个人而言，可以通过 AList 整理手上 N 个不同网盘间的资源，再利用类似 RaiDrive 这样挂载网盘的工具，实现前面说的本地部署，方便操作。</p>
+<p>对于爱折腾的高玩与分享资源的群主、站长而言，可以利用 AList 支持部署服务器的特性，拥有一个聚合 N 家网盘空间的资源分享站，这样的站点不仅支持文件预览，还能上传、下载、在线观看等等，省流量，还实用。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-5.png" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>相比部署自己电脑上随便玩玩，后者自然通用性更强，比如挂载到服务器后，手机也能通过浏览器访问，但终归对咱们个人来说，还是太复杂。</p>
+<p>有没有什么办法能让手机也享受到 AList 的便利呢？研究了两天特来把解决方案分享给大家。</p>
+<p><strong>AList Termux</strong></p>
+<p>本质上说，AList 不是专精的网盘挂载工具，而是一个文件列表程序，它只是把各个来源的资源文件都聚集到了一处。</p>
+<p>包括且不限于阿里云盘、123 云盘、蓝奏云网盘、PikPak 网盘等等：</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-6.png" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>所以想要在手机上体验聚合资源的魅力，就需要先把 AList 部署到手机上，这里我们用到的是「Termux」，它是一个免 Root 即可搭建完整 Linux 环境的安卓终端 App。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>我们可以通过命令行的方式，一键在手机上安装 AList 程序，很简单，输入下面这行安装指令即可：</p>
+<p>apt update &amp;&amp; apt install alist</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-1.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>然后我们只要再输入一行启动指令，看到「0.0.0.0:5244」就可以在浏览器访问 AList 了。</p>
+<p>alist server</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-2.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>访问的链接就是「<a href="http://0.0.0.0:5244」，很明显，移动端的">http://0.0.0.0:5244」，很明显，移动端的</a> AList 做有适配，长这个样子。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-3.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>不过这里还需要个账号密码，如果你像我一样启动 AList 时没有显示，那可以在 Termux 再输入一行查询密码的指令，最终给到的就是账号密码了。</p>
+<p>alist admin</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-4.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>回到手机浏览器上，输入账号密码后，修改密码、添加网盘就都能够搞定了：</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-5.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>如何添加网盘暂且不提，大家有没有觉得像这样每次都要用到 Termux 输入命令行启动 AList 的方式也太不便捷了，单是那个命令行的操作就很劝退。</p>
+<p>所以我就在想手机上嘛，只有点点点的操作方式才是王道，那 AList 要怎么点点点的部署到手机上呢？</p>
+<p>咱们曲线救国，一个叫「115 小幸运」内置的有 AList，真·点点点全都搞定。</p>
+<p><strong>115 小幸运</strong></p>
+<p>单从名字上就不难看出，115 小幸运这个 App 是个 115 网盘的第三方辅助工具，但我们不用登录 115 网盘账号，直接找到设置按钮。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-6.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>去设置页往下扒拉，你会发现，它内置有 AList，我们只用勾选并应用：</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-7.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>回到浏览器上，访问「<a href="http://0.0.0.0:5244」的链接，你会发现">http://0.0.0.0:5244」的链接，你会发现</a> AList 已经部署完成，蓄势待发了。</p>
+<p>至于账号密码？你在 115 小幸运的设置页里点击「查看 AList 密码」，都在这里，单点还能自动复制密码。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-8.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>在首次访问 AList 时，它的聚合主页会是空空荡荡的，别着急，往下找到「管理」俩字：</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-9.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>在管理页，我们就能修改密码、添加云盘了，这里简单说说如何添加云盘，在左侧菜单找到「存储」，选择「添加」。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-10.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>这里会先让我们选择要添加的云盘，然后会加载出乌泱泱一大串，千万别着急，需要我们填的并不多。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-11.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>以 123 云盘为例，需要填的就三项：一项是「挂载路径」，简单理解，挂载路径就是给这个空间起个名，剩下两项则是用户名和密码，这里直接填我们 123 云盘的账号密码即可。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-12.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>回到 AList 主页，123 云盘就搞定了：</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-13.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>每个网盘的添加姿势不太一样，建议大家去文档里摸索一下，电脑操作会方便些，然后按教程把 Token、cookie 之类的值收藏起来用。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-7.png" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>地址：<a target="_blank" rel="noopener" href="https://alist.nn.ci/zh/guide/drivers/common.html">https://alist.nn.ci/zh/guide/drivers/common.html</a></p>
+<p>当你加载了多个网盘后，无论是在线预览，还是管理网盘资源，无需下载各个网盘的客户端，只用在 AList 上就能搞定了。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-14.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>如果你觉得手机浏览器限制了你的发挥，完全可以用支持 Webdav 的工具访问部署好的 AList。</p>
+<p>这里用 nPlayer 举例，我们在「网络」里新建 Webdav 服务器，必填的有 5 项，主机、用户、密码、端口和路径。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-15.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>其中主机这里我们直接用 127.0.0.1 或者 0.0.0.0 这个本地 IP 即可；用户和密码则是 AList 的账号密码，115 小幸运上可以查看；端口 AList 默认的都是 5244；路径 AList 默认的则是 dav。</p>
+<p>保存后，你会发现，无需浏览器，AList 所聚合来的网盘，都出现在了 nPlayer 上。</p>
+<p><img src="https://www.i3zh.com/wp-content/uploads/2022/11/4ffce04d92a4d6cb21c1494cdfcd6dc1-16.jpg" alt="AList+Termux+115小幸运，搭配使用，把N个网盘挂载在手机本地！-i3综合社区"></p>
+<p>也就说，支持 Webdav 的工具，都能用这套思路把全部网盘资源当成本地资源来用，就是这么方便。</p>
+<p><strong>结语</strong></p>
+<p>把网盘聚集起来挂载到本地，图的就是个方便，不用下载那么多云盘客户端，也能管理访问自己的资源，电脑、手机皆是如此。</p>
+<p>关于电脑上的 AList 部署，大家可以看看<a target="_blank" rel="noopener" href="https://alist.nn.ci/zh/guide/install/manual.html">官方指导文章</a>也是非常简单的，如果是windows系统找到-手动安装-选择windows-安装官方指引步骤即可</p>
+<p>至于今天手机上的 Termux、115 小幸运和 nPlayer，老规矩，我都准备好了，感兴趣的小伙伴可以上手摸索了，希望今天这篇能打开大家的思路，让网盘变得更有用。</p>
+<p>Termux、115小幸运、nPlayer：<br><a target="_blank" rel="noopener" href="https://pan.quark.cn/s/8f2b2629ba3c">https://pan.quark.cn/s/8f2b2629ba3c</a></p>
+<p>备用链接：<br><a target="_blank" rel="noopener" href="https://url66.ctfile.com/d/3211366-52436045-81fe18?p=acg47">https://url66.ctfile.com/d/3211366-52436045-81fe18?p=acg47</a><br>(访问密码: acg47)</p>
+<p>AList官网：<a target="_blank" rel="noopener" href="https://alist.nn.ci/zh/">https://alist.nn.ci/zh/</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网盘</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/实用软件//" class="article-tag-list-link color5">实用软件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/01/13/AList-Termux-115%E5%B0%8F%E5%B9%B8%E8%BF%90%EF%BC%8C%E6%90%AD%E9%85%8D%E4%BD%BF%E7%94%A8%EF%BC%8C%E6%8A%8AN%E4%B8%AA%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E5%9C%A8%E6%89%8B%E6%9C%BA%E6%9C%AC%E5%9C%B0%E6%88%96%E8%80%85%E5%AE%89%E8%A3%85%E5%9C%A8%E7%94%B5%E8%84%91%E7%AB%AF/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-如何在windows10上安装安卓子系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -438,7 +649,7 @@
 <h2 id="生成-x2F-添加SSH公钥"><a href="#生成-x2F-添加SSH公钥" class="headerlink" title="生成&#x2F;添加SSH公钥"></a>生成&#x2F;添加SSH公钥</h2><p><a target="_blank" rel="noopener" href="https://gitee.com/help/labels/19">SSH Key</a> <a target="_blank" rel="noopener" href="https://gitee.com/help/labels/29">SSH 公钥</a></p>
 <p>Gitee 提供了基于SSH协议的Git服务，在使用SSH协议访问仓库之前，需要先配置好账户&#x2F;仓库的SSH公钥。</p>
 <p>你可以按如下命令来生成 sshkey:</p>
-<p>ssh-keygen -t ed25519 -C “<a href="mailto:&#x78;&#120;&#120;&#x78;&#x78;&#x40;&#120;&#x78;&#120;&#120;&#120;&#x2e;&#99;&#x6f;&#x6d;">&#x78;&#120;&#120;&#x78;&#x78;&#x40;&#120;&#x78;&#120;&#120;&#120;&#x2e;&#99;&#x6f;&#x6d;</a>“  </p>
+<p>ssh-keygen -t ed25519 -C “<a href="mailto:&#120;&#120;&#120;&#x78;&#120;&#64;&#120;&#x78;&#120;&#120;&#120;&#46;&#x63;&#x6f;&#109;">&#120;&#120;&#120;&#x78;&#120;&#64;&#120;&#x78;&#120;&#120;&#120;&#46;&#x63;&#x6f;&#109;</a>“  </p>
 <h1 id="Generating-public-x2F-private-ed25519-key-pair…"><a href="#Generating-public-x2F-private-ed25519-key-pair…" class="headerlink" title="Generating public&#x2F;private ed25519 key pair…"></a>Generating public&#x2F;private ed25519 key pair…</h1><blockquote>
 <p>注意：这里的 <code>xxxxx@xxxxx.com</code> 只是生成的 sshkey 的名称，并不约束或要求具体命名为某个邮箱。<br>现网的大部分教程均讲解的使用邮箱生成，其一开始的初衷仅仅是为了便于辨识所以使用了邮箱。</p>
 </blockquote>
@@ -449,7 +660,7 @@
 <p>复制生成后的 ssh key，通过仓库主页 <strong>「管理」-&gt;「部署公钥管理」-&gt;「添加部署公钥」</strong> ，添加生成的 public key 添加到仓库中。</p>
 <p><img src="https://images.gitee.com/uploads/images/2018/0814/233212_29a62378_551147.png" alt="添加部署公钥" title="添加部署公钥"></p>
 <p>添加后，在终端（Terminal）中输入</p>
-<p>ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#x65;&#101;&#x2e;&#99;&#x6f;&#109;">&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#x65;&#101;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p>ssh -T <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#101;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#101;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <p>首次使用需要确认并添加主机到本机SSH可信列表。若返回 <code>Hi XXX! You&#39;ve successfully authenticated, but Gitee.com does not provide shell access.</code> 内容，则证明添加成功。</p>
 <p><img src="https://images.gitee.com/uploads/images/2018/0814/170837_4c5ef029_551147.png" alt="SSH添加提示" title="SSH添加提示"></p>
 <p>添加成功后，就可以使用SSH协议对仓库进行操作了。</p>
@@ -1156,170 +1367,6 @@
 
 
   
-    <article id="post-视频转换软handbrake" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/31/%E8%A7%86%E9%A2%91%E8%BD%AC%E6%8D%A2%E8%BD%AFhandbrake/">视频转换软handbrake</a>
-    </h1>
-  
-
-        
-        <a href="/2022/12/31/%E8%A7%86%E9%A2%91%E8%BD%AC%E6%8D%A2%E8%BD%AFhandbrake/" class="archive-article-date">
-  	<time datetime="2022-12-31T10:51:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>handbrake</p>
-<p>onlyoffice 该软件在测试种与 微软的office 格式100%兼容 handbrake 视频格式转换器 ShortCut 这是当前是我所使用的最好的免费开源的视频剪辑软件 Bitwarden 密码管理器 rufus 轻松创建USB启动盘 onlyoffice：<a target="_blank" rel="noopener" href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbU1UQWJZb3dUOElwa1lxVnJjdWs1eDNfUGgyQXxBQ3Jtc0tsMUlXcTJ5TzBObk9nNGZZQllYVkNIVkpHdlVQTUZtMGpZemY3Wl8xVGFDa0MzeVBxai1GdXZRcXNMNjlPSXpUaU9DUEVsM21mXzRDaFo5QzAzSU10bG5QamJCMHhBdVZqVEZTa1R0aFJXa0xZRGdtcw&q=https://www.onlyoffice.com/zh/&v=ME2jxWLltA0">https://www.onlyoffice.com/zh/</a> handbrake：<a target="_blank" rel="noopener" href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkY3YmhveGo1MmZIMDJBc19paDNFQTVKTS11d3xBQ3Jtc0ttQVFhNlpIMUMyWEZKTkxnbHNabFdzakVVQWhsQmZxQmtIN21MZm1EVUF2UHJHUmpUYmVxUnVXakE3cVdXdmszNnJ3UUQ0Q0lMNnZLLW54TG9EMGZjOVhOTmxXMEZ0Z1pYZFBIcVVHb1kxTjk4MjdIWQ&q=https://handbrake.fr/&v=ME2jxWLltA0">https://handbrake.fr/</a> ShortCut：<a target="_blank" rel="noopener" href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbjE4YkZDRWhTS1h1UXRmR0tUcE1jY2c5YlU1d3xBQ3Jtc0tucWdMVU9JVHUtMGtyYU1BV3NCTWRNdERIeHNmbEpRT3cyUkl0TFNjMHhycVVBdFpPX0xBNTgzR08yQkZhZWxsSEdaM1JCWkhHM2hYU25tWlNieXpadGNUcWU3NU03aW9ocmptdHJLd29nU3p5azlDMA&q=https://shotcut.org/&v=ME2jxWLltA0">https://shotcut.org/</a> Bitwarden：<a target="_blank" rel="noopener" href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbjlMNnBmSkEzMWFPNGhfSGFYcTdOS1JTWV9NQXxBQ3Jtc0trMnZUTmphN3NUT0czc2FkQ051MVl3U2J6NjYxeG1INjM2QzlRQVBRRVE0X0RwazBRTlZKRUJtbndoSE9tNDdvYUhqVlNQMGMtQzd4RVBnamZiX1pkLW9uRWxBWWJDdUFBaE1FYlpMbHMxY1Z3UzRuMA&q=https://bitwarden.com/&v=ME2jxWLltA0">https://bitwarden.com/</a> rufus：<a target="_blank" rel="noopener" href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbEJOSUNQZ255RVktZjlRTGtWTVJkQTAtNWs4Z3xBQ3Jtc0ttc0JSdmRNSl8xWWRRa3UwLWItd3JyUlU4UmpjRDc5cHpyb0gzTklXbnN2N01TQlZrMU5ienliT1o4aGZQdDhxVVBYRVJkQklqVHUxdWpGc1Y2eHl2bGJ5VnVLeklOTWN6TzV1S1FBbTdGVnZLcVZ6Yw&q=https://rufus.ie/&v=ME2jxWLltA0">https://rufus.ie/</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/12/31/%E8%A7%86%E9%A2%91%E8%BD%AC%E6%8D%A2%E8%BD%AFhandbrake/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何在个人博客中使用github作为图床" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/31/%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%AD%E4%BD%BF%E7%94%A8github%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/">如何在个人博客中使用github作为图床</a>
-    </h1>
-  
-
-        
-        <a href="/2022/12/31/%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%AD%E4%BD%BF%E7%94%A8github%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/" class="archive-article-date">
-  	<time datetime="2022-12-31T10:51:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原文 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138012354">https://zhuanlan.zhihu.com/p/138012354</a></p>
-<p>在我们写静态博客时，常常会使用图床来存放image文件，比如im.ms，七牛等。本文推荐使用github来做为图床。因为github不限空间，而且其稳定性是众所周知的，你不用担心几年以后，是否要给这些图片搬家。</p>
-<p>我们的方案将使用hexo，picgo, github和cloudflare来构成。</p>
-<h2 id="1-构建基于Hexo的博客"><a href="#1-构建基于Hexo的博客" class="headerlink" title="1. 构建基于Hexo的博客"></a>1. 构建基于Hexo的博客</h2><p>这部分没有难度，可以参考Hexo的官方文档。客户端软件建议使用vscode来编辑markdown文件，安装markdown相关扩展，以及hexo-utils扩展。</p>
-<p>在Hexo的config文件里_config.yml中，设置好github相关信息。下面的blog.jieyu.ai的示例：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:zillionare/blog.jieyu.ai.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-使用gitpages发布博客"><a href="#2-使用gitpages发布博客" class="headerlink" title="2. 使用gitpages发布博客"></a>2. 使用gitpages发布博客</h2><p><img src="https://pic4.zhimg.com/80/v2-e186b6709e19a9691f4bf0656009d13f_720w.webp"></p>
-<p>登录到github，修改repo的settings，打开github pages设置如上图所示。</p>
-<p>注意这里设置了自定义域名，这是我们后面可以通过CDN加速的关键。注意一旦我们使用了自定义域名，github就会在repo的根目录下增加一个名为CNAME的文件，这个文件只有一行内容，就是域名。我们在进行hexo build之前，必须将该文件同步到本地，否则hexo进行部署时，会从repo中删除掉这个文件，最终导致gitpages无法显示。</p>
-<p>这样我们就配置好了一个基于github&#x2F;gitpages的静态博客，引用了本地的图片。它的工作原理是这样的：</p>
-<ol>
-<li>在markdown中插入图片时，先将图片copy到指定的folder（可能是全局的，也可能是与博客文件同名的，可配置）。</li>
-<li>在markdown文件中插入图片的相对链接，如<code>![测试图](/assets/dfsggdgdsxxdfdgd.png)</code></li>
-<li>在编译时，上述图片文件被copy到public下对应目录；markdown文件被编译成为html，上述链接也被替换成<code>&lt;img src=...&gt;</code>标签。</li>
-<li>在部署时，上述图片和引用它的html文件都被上传到github，进而被gitpages抓取生成博客。</li>
-</ol>
-<p>如果这篇文章还要导入到其它网站，上述方法则会遇到一个问题：markdown文件里使用的图片链接由于是相对链接，因此都会失效；我们必须将图片一一上传到网站，再一一插入这些图片的链接。</p>
-<p>很自然地，我们想到如果使用图床，则markdown文件里直接使用了绝对链接，因此当我们把文章发布到其它网站时，只需要导入markdown文件就可以了。</p>
-<p>一个好的图床必须容量大、访问速度快、可管理、永久存放、方便下载迁移、没有所谓的反盗链问题。Github目前的限制每个repo 100G，应该是足够了。在可管理性、可靠性上也比国内的免费服务好太多。唯一的问题，就是国内访问的速度和稳定性不太令人满意，但我们可以使用CDN加速来解决这个问题。</p>
-<h2 id="3-设置图床"><a href="#3-设置图床" class="headerlink" title="3. 设置图床"></a>3. 设置图床</h2><p>如果使用图床服务，我们希望使用过程是这样的：</p>
-<ol>
-<li><p>使用工具将图片自动上传到github，并获取对应的gitpage的链接地址</p>
-</li>
-<li><p>在markdown文件中插入上述链接地址，并能立即显示出来</p>
-</li>
-</ol>
-<p>但此时我们必须另外创建一个repo，并启用另外一个域名来实现图床服务。这时因为，hexo每次上传时都是将服务器上的文件清空后，再将本地文件全量上传的。所以如果我们仍然将图片上传到博客所在的repo，则这些图片将在hexo deploy之后，被从github repo上清除掉，这样一来，链接也就失效了。如果要保持链接有效，就必须在本地的某个目录下存放这个图片，然后经过编译和hexo上传后，仍然出现在与上传工具上传时一样的位置。这就要求各种工具之间很好地集成。</p>
-<p>遗憾地是，最受欢迎的工具集中，似乎只有typora与picgo这一对组合能够实现这一功能；如果我们想使用vscode+picgo，则是不行的。所以我们换一个思路，启动另外一个repo，通过picgo将图处上传到这个repo，由于这个repo没有第二个写者，所以也不会出现文件被替换或者删除的问题。图片一旦上传，它将永远有效。</p>
-<p>首先我们在github上创建一个新的repo，这里我们记作images。同样在settings中打开它的github pages选项，设置自定义域名，比如 images.jieyu.ai。</p>
-<p>我们还要在repo的根目录下增加一个名为index.html的文件，内容只要是合法的html文件都可以。如果没有这个文件，gitpages是不会为我们生成站点的–也就无法引用图片。</p>
-<h2 id="4-设置picgo"><a href="#4-设置picgo" class="headerlink" title="4. 设置picgo"></a>4. 设置picgo</h2><p>我们使用picgo来上传图片，需要进行以下设置。这里以picgo app为例，我在vscode中使用picgo的插件没能成功。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-6e9865df6baf927162e7a26499e5a38f_720w.webp"></p>
-<p>截图中使用的repo名为blog_raw，是因为我将blog的源文件上传到这个repot里作为一个备份，images也放在这个repo里。实际上它就是我们本节讲的新建的repo – images。你在进行设置时，应该根据具体情况来更改。</p>
-<p>存储路径是指repo里的路径，不存在也没有关系，因为picgo会帮我们创建。自定义域名就是我们在设置images repo时设置的自定义域名。</p>
-<p>现在，随便截处屏，通过picgo上传。picgo上传完成后，会自动将链接地址存入剪贴板；所以我们可以通过Ctrl+v将链接插入到markdown文件里。由于gitpages生成会有一定的延时（测试中最长30秒左右），所以有时候可能需要等一会，这张截图才会真正显示在预览中。</p>
-<h2 id="5-设置CDN加速"><a href="#5-设置CDN加速" class="headerlink" title="5. 设置CDN加速"></a>5. 设置CDN加速</h2><p>现在我们来设置CDN加速。我使用的是cloudflare，免费量又足。设置很简单，只要将自定义域名（比如images.jieyu.ai)绑定到github服务器的IP上就好：</p>
-<p><img src="https://pic3.zhimg.com/80/v2-9aa2dfbfe21adffd8ce1c31977e4c48e_720w.webp"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/12/31/%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%AD%E4%BD%BF%E7%94%A8github%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1434,6 +1481,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">win10</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">网盘</a>
               </li>
             
             <div class="clearfix"></div>
